@@ -1,4 +1,4 @@
-#General Documents
+# General Documents
 
 General Documents (GD) are the overarching documents containing steps that apply across all operating systems and are not OS specific unless stated otherwise.
 
