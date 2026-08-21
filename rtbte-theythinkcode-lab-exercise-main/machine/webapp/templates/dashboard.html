@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <main class="card wide">
+      <div class="row">
+        <h1>Dashboard</h1>
+        <a href="/logout">Logout</a>
+      </div>
+      <p>Logged in as <strong>{{ user }}</strong> ({{ role }})</p>
+
+      {% if profile %}
+      <section>
+        <h2>My Details</h2>
+        <article class="note">
+          <p><strong>Name:</strong> {{ profile.full_name }}</p>
+          <p><strong>Email:</strong> {{ profile.email }}</p>
+          <p><strong>Department:</strong> {{ profile.department }}</p>
+          <p><strong>Office:</strong> {{ profile.office }}</p>
+          <p><strong>Extension:</strong> {{ profile.extension }}</p>
+        </article>
+      </section>
+      {% endif %}
+
+      <section>
+        <h2>Notes</h2>
+        {% for note in notes %}
+          <article class="note">
+            <h3>{{ note.title }}</h3>
+            <p>{{ note.body }}</p>
+          </article>
+        {% endfor %}
+      </section>
+
+      {% if role == 'staff' and staff_profiles %}
+      <section>
+        <h2>Staff Directory</h2>
+        <table>
+          <thead><tr><th>Username</th><th>Name</th><th>Email</th><th>Department</th><th>Office</th><th>Ext</th></tr></thead>
+          <tbody>
+            {% for person in staff_profiles %}
+              <tr>
+                <td>{{ person.username }}</td>
+                <td>{{ person.full_name }}</td>
+                <td>{{ person.email }}</td>
+                <td>{{ person.department }}</td>
+                <td>{{ person.office }}</td>
+                <td>{{ person.extension }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </section>
+      {% endif %}
+
+      <section>
+        <h2>Search</h2>
+        <form method="get" action="/search">
+          <input type="text" name="q" placeholder="Search notes">
+          <button type="submit">Search</button>
+        </form>
+      </section>
+
+      <section>
+        <h2>Upload</h2>
+        <form method="post" action="/upload" enctype="multipart/form-data">
+          <input type="file" name="file">
+          <button type="submit">Upload</button>
+        </form>
+      </section>
+
+      <p><a href="/admin">Admin area</a> | <a href="/files/">Public files</a></p>
+    </main>
+  </body>
+</html>

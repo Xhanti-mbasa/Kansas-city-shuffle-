@@ -1,0 +1,7 @@
+evidence/
+*.log
+*.tmp
+*.swp
+*.swo
+*.bak
+

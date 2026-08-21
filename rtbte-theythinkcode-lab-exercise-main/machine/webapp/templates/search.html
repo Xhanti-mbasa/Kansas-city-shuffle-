@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Search</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <main class="card wide">
+      <h1>Search Results</h1>
+      <p>Query: <strong>{{ query }}</strong></p>
+      {% for result in results %}
+        <article class="note">
+          <h3>{{ result.title }}</h3>
+          <p>{{ result.body }}</p>
+        </article>
+      {% endfor %}
+      <p><a href="/dashboard">Back</a></p>
+    </main>
+  </body>
+</html>
+

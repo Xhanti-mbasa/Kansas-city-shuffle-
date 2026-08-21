@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>School Portal</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <main class="card">
+      <h1>School Portal</h1>
+      {% if error %}<p class="error">{{ error }}</p>{% endif %}
+      <form method="post" action="/login">
+        <label>Username <input type="text" name="username"></label>
+        <label>Password <input type="password" name="password"></label>
+        <button type="submit">Login</button>
+      </form>
+      <p class="muted">
+        New here?
+        <a href="/student-signup">Student signup</a>
+        or
+        <a href="/staff-signup">Staff signup</a>
+      </p>
+      <p class="muted"><a href="/blue-team">ThinkCode Cyberteam directory</a></p>
+    </main>
+  </body>
+</html>

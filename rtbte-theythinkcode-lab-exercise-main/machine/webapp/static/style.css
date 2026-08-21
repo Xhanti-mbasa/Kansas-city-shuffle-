@@ -1,0 +1,91 @@
+body {
+  font-family: sans-serif;
+  background: #101820;
+  color: #f5f7fa;
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.card {
+  background: #1a2430;
+  padding: 2rem;
+  border-radius: 16px;
+  width: min(92vw, 480px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.wide {
+  width: min(92vw, 900px);
+}
+
+label, input, button {
+  display: block;
+  width: 100%;
+  margin-top: 0.8rem;
+}
+
+input, button {
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: 0;
+}
+
+button {
+  background: #f7b731;
+  font-weight: bold;
+}
+
+.note {
+  background: rgba(255,255,255,0.06);
+  padding: 1rem;
+  border-radius: 12px;
+  margin: 0.75rem 0;
+}
+
+.error {
+  color: #ff7b7b;
+}
+
+.muted {
+  color: rgba(245, 247, 250, 0.75);
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.profile-card {
+  background: rgba(255,255,255,0.06);
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.sound-wrap {
+  margin: 1rem 0;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+a { color: #f7b731; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  text-align: left;
+  padding: 0.6rem;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}

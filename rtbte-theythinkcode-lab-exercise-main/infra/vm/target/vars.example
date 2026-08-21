@@ -1,0 +1,8 @@
+VM_NAME=school-web
+OS=rhel10
+RAM_MB=4096
+CPU_COUNT=2
+DISK_GB=30
+NETWORK=lab-net
+HOSTNAME=school-web
+

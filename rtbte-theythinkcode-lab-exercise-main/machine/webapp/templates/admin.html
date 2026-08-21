@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Admin</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <main class="card wide">
+      <h1>Admin Area</h1>
+      {% if denied %}
+        <p class="error">Access denied.</p>
+      {% else %}
+        <table>
+          <thead><tr><th>ID</th><th>Username</th><th>Role</th></tr></thead>
+          <tbody>
+            {% for user in users %}
+              <tr><td>{{ user.id }}</td><td>{{ user.username }}</td><td>{{ user.role }}</td></tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        <h2>Profiles</h2>
+        <table>
+          <thead><tr><th>Username</th><th>Name</th><th>Email</th><th>Department</th><th>Office</th><th>Ext</th></tr></thead>
+          <tbody>
+            {% for person in profiles %}
+              <tr>
+                <td>{{ person.username }}</td>
+                <td>{{ person.full_name }}</td>
+                <td>{{ person.email }}</td>
+                <td>{{ person.department }}</td>
+                <td>{{ person.office }}</td>
+                <td>{{ person.extension }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% endif %}
+    </main>
+  </body>
+</html>

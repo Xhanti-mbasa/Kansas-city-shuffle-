@@ -1,0 +1,8 @@
+school.local:53 {
+    hosts {
+        /etc/coredns/domains
+        fallthrough
+    }
+    log
+    errors
+}

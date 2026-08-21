@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>ThinkCode Cyberteam</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <main class="card wide">
+      <div class="row">
+        <h1>ThinkCode Cyberteam</h1>
+        <a href="/">Portal Home</a>
+      </div>
+      <p class="muted">Blue Team roster for the SOC workshop.</p>
+      <section class="grid">
+        {% for person in team %}
+          <article class="profile-card">
+            <h2>{{ person.first_name }} {{ person.last_name }}</h2>
+            <p><strong>Role:</strong> {{ person.role }}</p>
+            <p><strong>Email:</strong> {{ person.email }}</p>
+            <p><strong>Phone:</strong> {{ person.phone }}</p>
+            <p><strong>Station:</strong> {{ person.station }}</p>
+          </article>
+        {% endfor %}
+      </section>
+    </main>
+  </body>
+</html>

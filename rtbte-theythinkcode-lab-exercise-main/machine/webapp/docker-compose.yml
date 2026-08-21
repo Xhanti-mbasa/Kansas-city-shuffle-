@@ -1,0 +1,31 @@
+services:
+  dns:
+    image: coredns/coredns:1.11.1
+    command: -conf /etc/coredns/Corefile
+    volumes:
+      - ./domains:/etc/coredns/domains:ro
+      - ../../infra/dns/Corefile:/etc/coredns/Corefile:ro
+    ports:
+      - "${DNS_HOST_PORT:-53}:53/udp"
+      - "${DNS_HOST_PORT:-53}:53/tcp"
+
+  school-web:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - SECRET_KEY=training-secret-key
+      - APP_INSTANCE_DIR=/tmp/soc-workshop-instance
+      - MAILHOG_HOST=mailhog
+      - MAILHOG_PORT=1025
+      - MAIL_FROM=no-reply@school.local
+      - DNS_NAME=portal.school.local
+    depends_on:
+      - dns
+      - mailhog
+
+  mailhog:
+    image: mailhog/mailhog:v1.0.1
+    ports:
+      - "1025:1025"
+      - "${MAILHOG_WEB_PORT:-8025}:8025"

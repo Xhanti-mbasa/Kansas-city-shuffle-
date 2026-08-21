@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Account Created</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <main class="card">
+      <h1>{{ account_type }} account created</h1>
+      <p class="muted">Username: <strong>{{ username }}</strong></p>
+      <p>Your welcome email was sent to MailHog.</p>
+      <div class="sound-wrap">
+        <iframe
+          width="110"
+          height="200"
+          src="{{ sound_url }}"
+          frameborder="0"
+          scrolling="no"
+          allow="autoplay"
+        ></iframe>
+      </div>
+      <p><a href="/">Back to login</a></p>
+    </main>
+  </body>
+</html>
