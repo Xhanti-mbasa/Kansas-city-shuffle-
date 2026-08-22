@@ -1,6 +1,6 @@
 ### Windows 
 
-This windows folder is to assist in the necessary requirements of the setting up for the labs, and for your own personal learning journey. 
+This windows folder is to assist in the necessary requirements of the setting up Virtualbox for the labs, and for your own personal learning journey. 
 
 ### Red Hat Enterprise Linux
 
